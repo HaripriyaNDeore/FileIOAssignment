@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp
 {
@@ -24,7 +25,23 @@ namespace WindowsFormsApp
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                OpenFileDialog od = new OpenFileDialog();
+                od.Filter = "Text Dococument(*.txt)|*.txt|Word(*.docx)|*.docx|All Files(*.*)|*.*";
+                DialogResult result = od.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    StreamReader sr = new StreamReader(od.FileName);
+                    TextArea.Text = sr.ReadToEnd();
+                    sr.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,5 +83,28 @@ namespace WindowsFormsApp
         {
             
         }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog sd = new SaveFileDialog();
+                sd.DefaultExt = ".txt";
+                sd.Filter = "text Documents(*.txt)|*.txt|word(*.doc)|*.doc";
+                DialogResult result = sd.ShowDialog();
+                if(result==DialogResult.OK)
+                {
+                    StreamWriter sw = new StreamWriter(sd.FileName);
+                    sw.WriteLine(TextArea.Text);
+                    sw.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
+
