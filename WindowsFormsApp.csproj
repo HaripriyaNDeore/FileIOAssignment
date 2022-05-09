@@ -77,6 +77,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Batch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Batch.Designer.cs">
+      <DependentUpon>Batch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book.cs" />
+    <Compile Include="Book1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book1.Designer.cs">
+      <DependentUpon>Book1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs">
       <SubType>Form</SubType>
@@ -102,8 +115,16 @@
     <Compile Include="Deparment1.Designer.cs">
       <DependentUpon>Deparment1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
+    <Compile Include="Product1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product1.Designer.cs">
+      <DependentUpon>Product1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Store.cs" />
     <Compile Include="StudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +137,12 @@
     <Compile Include="RegistrationFormcs.Designer.cs">
       <DependentUpon>RegistrationFormcs.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Batch.resx">
+      <DependentUpon>Batch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book1.resx">
+      <DependentUpon>Book1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Deparment1.resx">
       <DependentUpon>Deparment1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product1.resx">
+      <DependentUpon>Product1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
